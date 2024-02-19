@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Ordering System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Online Food Ordering System</h1>
+</header>
+
+<main>
+    
+    <button id="open-add-food-modal">Add Food Item</button>
+
+
+    <div id="add-food-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add Food Item</h2>
+            <form id="add-food-form">
+                <input type="text" id="food-id" placeholder="Food ID" required>
+                <input type="text" id="food-name" placeholder="Name" required>
+                <select id="food-category" required>
+                    <option value="">Select Category</option>
+                    <option value="North Indian">North Indian</option>
+                    <option value="South Indian">South Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Italian">Italian</option>
+                </select>
+                <input type="number" id="food-price" placeholder="Price" required>
+                <textarea id="food-description" placeholder="Description" required></textarea>
+                <button type="submit">Add Food</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Menu Table -->
+    <section id="menu-table">
+        <h2>Menu</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="menu-items">
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Place Order Section -->
+    <section id="place-order">
+        <h2>Place Your Order</h2>
+        <div class="order-section">
+            <div class="user-details">
+                <input type="text" id="user-id" placeholder="User ID" required>
+                <input type="text" id="customer-name" placeholder="Name" required>
+                <input type="email" id="customer-email" placeholder="Email" required>
+                <input type="tel" id="customer-phone" placeholder="Phone Number" required>
+                <input type="text" id="customer-address" placeholder="Delivery Address" required>
+            </div>
+            <div class="order-details">
+                <input type="text" id="order-item-id" placeholder="Food ID" required>
+                <input type="text" id="order-address" placeholder="Confirm Delivery Address" required>
+                <button id="place-order-btn">Place Order</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="recent-orders">
+        <h2>Recent Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Item Name</th>
+                    <th>Item Description</th>
+                    <th>Price (₹)</th>
+                    <th>Order Date</th>
+                </tr>
+            </thead>
+            <tbody id="recent-orders-list">
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- Track Your Order Section -->
+    <section id="track-order">
+        <h2>Track Your Order</h2>
+        <form id="track-order-form">
+            <input type="text" id="track-order-id" placeholder="Enter Your Order ID" required>
+            <button type="submit">Track Order</button>
+        </form>
+        <div id="order-status"></div>
+    </section>
+
+
+    <!-- View Orders Section -->
+    <section id="view-orders">
+        <h2>View Orders</h2>
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date">
+        <button id="filter-orders-btn">Filter Orders</button>
+        <div id="orders-list">
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Online Food Ordering System</p>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
